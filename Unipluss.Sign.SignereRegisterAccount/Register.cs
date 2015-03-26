@@ -23,6 +23,12 @@ namespace Unipluss.Sign.SignereRegisterAccount
             webBrowser.ScriptErrorsSuppressed = true;
             this.WindowState = FormWindowState.Maximized;
             Dealer = new Guid(dealer);
+
+            if (File.Exists(filepath))
+            {
+                Console.WriteLine("File: {0} exists already",filepath);
+                Environment.Exit(31);
+            }
         }
 
         private void Register_Load(object sender, EventArgs e)
@@ -61,7 +67,11 @@ namespace Unipluss.Sign.SignereRegisterAccount
             }
             catch (Exception ex)
             {
-                File.WriteAllText("SignereLog.txt", string.Format("Message: {0} Stack: {1} Source: {2} Timestamp: {3}", ex.Message, ex.StackTrace, ex.Source, DateTime.Now));
+                string msg= string.Format("Message: {0} Stack: {1} Source: {2} Timestamp: {3}", ex.Message, ex.StackTrace, ex.Source, DateTime.Now);
+                Console.WriteLine(msg);
+                if (File.Exists("SignereLog.txt"))
+                    File.Delete("SignereLog.txt");
+                File.WriteAllText("SignereLog.txt",msg);
                 Environment.Exit(3);
             }
         }
@@ -97,8 +107,12 @@ namespace Unipluss.Sign.SignereRegisterAccount
                 }
                 catch (Exception ex2)
                 {
-                    File.WriteAllText("SignereLog.txt", string.Format("Message: {0} Stack: {1} Source: {2} Timestamp: {3}", ex2.Message, ex2.StackTrace, ex2.Source, DateTime.Now));
-                    Environment.Exit(3);
+                    string msg = string.Format("Message: {0} Stack: {1} Source: {2} Timestamp: {3}", ex2.Message, ex2.StackTrace, ex2.Source, DateTime.Now);
+                    Console.WriteLine(msg);
+                    if (File.Exists("SignereLog.txt"))
+                        File.Delete("SignereLog.txt");
+                    File.WriteAllText("SignereLog.txt", msg);
+                    Environment.Exit(32);
                 }
             }
         }

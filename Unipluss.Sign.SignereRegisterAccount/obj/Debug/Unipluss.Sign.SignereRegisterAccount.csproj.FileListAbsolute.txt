@@ -6,3 +6,12 @@ D:\Kode\NET\Signere\Unipluss.Sign.SignereRegisterAccount\Unipluss.Sign.SignereRe
 D:\Kode\NET\Signere\Unipluss.Sign.SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Debug\SignereRegisterAccount.exe
 D:\Kode\NET\Signere\Unipluss.Sign.SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Debug\SignereRegisterAccount.pdb
 D:\Kode\NET\Signere\Unipluss.Sign.SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Debug\Unipluss.Sign.SignereRegisterAccount.HelpBox.resources
+D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Debug\SignereRegisterAccount.exe
+D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Debug\SignereRegisterAccount.pdb
+D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\bin\Debug\SignereRegisterAccount.exe
+D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\bin\Debug\SignereRegisterAccount.pdb
+D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Debug\Unipluss.Sign.SignereRegisterAccount.csprojResolveAssemblyReference.cache
+D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Debug\Unipluss.Sign.SignereRegisterAccount.HelpBox.resources
+D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Debug\Unipluss.Sign.SignereRegisterAccount.Register.resources
+D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Debug\Unipluss.Sign.SignereRegisterAccount.Properties.Resources.resources
+D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Debug\Unipluss.Sign.SignereRegisterAccount.csproj.GenerateResource.Cache
