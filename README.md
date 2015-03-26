@@ -1,6 +1,11 @@
 # Signere register account
 Klient progam for å etablere kundeforhold til Signere.no
 
+Dette gjør det veldig lett og raskt å implementere Signere.no i dine løsninger og etablere kontoer for dine kunder.
+
+Programmet er en windows exe fil som krever .NET 3.5 installert.
+
+
 ###Input parameters:
 1. DealerID (Guid) din forhandler ID (må være Signere.no forhandler for å få dette
 2. Register URL denne kan du få fra Signere.no salg, dette er en tilpasset web side med skjema for bestilling av konto. Kan flette inn informasjon til skjema via parametre i URL.
