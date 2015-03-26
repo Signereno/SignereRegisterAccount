@@ -8,6 +8,16 @@ Programmet er en windows exe fil som krever .NET 3.5 installert. Den åpner en n
 
 #####Dette gjør det veldig enkelt å integrere Signere.no sine tjenester i egen programvare. Enkelt å komme i gang og enkelt i bruk er vårt mantra.
 
+###Prosssen
+1. Start exe fil med parametere fra eget program
+2. Programmet laster skjema tilpasset hver forhandler (logo, stilark, informasjon o.l.)
+3. Kunde fyller ut skjema, Organisasjonsnavn, Orgnummer, kontaktperson osv.
+4. Kunde signerer avtale med BankID. Hver avtale dokument kan tilpasses enkeltvis for forhandlere etter behov.
+5. Etter gjennomført signatur opprettes det en demo konto hos Signere.no tilknyttet din forhandlerid (se nedenfor)
+6. Sendes ut kvitteringse-post til kunde, forhandler og til Signere.no sin salgsavdeling
+7. Konto informasjon lagres som en fil på maskinen til personen som signerte og kan legges inn i programmet og dermed er en klar til å bruke Signere.no i sitt program.
+8. Dersom kunde ønsker å bli kunde, tar en kontakt med forhandler eller Signere.no og konto omgjøres fra demo konto til vanlig konto.
+9. Kunden er nå klar for Norges enkleste Signerings tjeneste :-)
 
 ###Input parameters:
 1. DealerID (Guid) din forhandler ID (må være Signere.no forhandler for å få dette
