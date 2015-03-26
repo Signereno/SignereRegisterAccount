@@ -22,3 +22,4 @@ Programmet er en windows exe fil som krever .NET 3.5 installert. Den åpner en n
 3. Generell feil
   * 31 Filsti i parameter 3 finnes allerede
   * 32 Feil med å hente ned lisensinformasjon fra API
+  * 33 Feil som er oppstått i registeringen eller signeringen på web
