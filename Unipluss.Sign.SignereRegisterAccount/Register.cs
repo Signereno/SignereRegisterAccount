@@ -64,6 +64,10 @@ namespace Unipluss.Sign.SignereRegisterAccount
                     webBrowser.Stop();
                     Environment.Exit(0);
                 }
+                else if (e.Url.ToString().ToLowerInvariant().Contains("useraborted"))
+                {
+                    Environment.Exit(1);
+                }
             }
             catch (Exception ex)
             {
