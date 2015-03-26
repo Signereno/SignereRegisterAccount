@@ -8,7 +8,7 @@ Programmet er en windows exe fil som krever .NET 3.5 installert. Den åpner en n
 
 #####Dette gjør det veldig enkelt å integrere Signere.no sine tjenester i egen programvare. Enkelt å komme i gang og enkelt i bruk er vårt mantra.
 
-###Prosssen
+###Prosessen
 1. Start exe fil med parametere fra eget program
 2. Programmet laster skjema tilpasset hver forhandler (logo, stilark, informasjon o.l.)
 3. Kunde fyller ut skjema, Organisasjonsnavn, Orgnummer, kontaktperson osv.
