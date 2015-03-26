@@ -67,6 +67,9 @@ namespace Unipluss.Sign.SignereRegisterAccount
                 else if (e.Url.ToString().ToLowerInvariant().Contains("useraborted"))
                 {
                     Environment.Exit(1);
+                }else if (e.Url.ToString().ToLowerInvariant().Contains("error"))
+                {
+                    Environment.Exit(33);
                 }
             }
             catch (Exception ex)
