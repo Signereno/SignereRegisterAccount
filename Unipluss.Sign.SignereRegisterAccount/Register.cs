@@ -105,7 +105,7 @@ namespace Unipluss.Sign.SignereRegisterAccount
                     webBrowser.Stop();
                     Environment.Exit(0);
                 }
-                else if (e.Url.ToString().ToLowerInvariant().Contains("useraborted"))
+                else if (e.Url.ToString().ToLowerInvariant().Contains("useraborted") || e.Url.ToString().ToLowerInvariant().Contains("userabort") || e.Url.ToString().ToLowerInvariant().Contains("abort"))
                 {
                     Environment.Exit(1);
                 }else if (e.Url.ToString().ToLowerInvariant().Contains("error"))
