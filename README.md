@@ -6,7 +6,7 @@ Dette gjør det veldig lett og raskt å implementere Signere.no i dine løsninge
 
 Programmet er en windows exe fil som krever .NET 3.5 installert. Den åpner en nettside med skjema som bruker fyller ut og signerer. Det blir da opprettet en konto hos Signere.no, og kontoinformasjon blir lastet ned til angitt filsti. For deretter å kunne lagres i systemet en ønsker å bruke Signere.no tjenester fra.
 
-#####Dette gjør det veldig enkelt å integrere Signere.no sine tjenester i egen programvare. Enkelt å komme i gang og enkelt i bruk er vårt mantra.
+#####Dette gjør det veldig enkelt å integrere Signere.no sine tjenester i egen programvare. Signere.no enkelt å komme i gang og enkelt i bruk.
 
 ###Prosessen
 1. Start exe fil med parametere fra eget program
