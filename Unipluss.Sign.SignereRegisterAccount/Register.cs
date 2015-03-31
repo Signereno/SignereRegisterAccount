@@ -1,7 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
 using System.Net;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows.Forms;
 using Microsoft.Win32;
@@ -10,10 +12,11 @@ namespace Unipluss.Sign.SignereRegisterAccount
 {
     public partial class Register : Form
     {
-        private readonly string _url;
+        private  string _url;
         private readonly string _filepath;
         private readonly string Format;
         private readonly Guid Dealer;
+        private WebBrowserEvents _events;
 
         public Register(string dealer, string url, string filepath, string format)
         {
@@ -21,10 +24,14 @@ namespace Unipluss.Sign.SignereRegisterAccount
             _filepath = filepath;
             Format = format.ToLowerInvariant();
             InitializeComponent();
+            Dealer = new Guid(dealer);
+            _events = new WebBrowserEvents(webBrowser, Dealer, format, filepath); 
+
             webBrowser.CausesValidation = false;
             webBrowser.ScriptErrorsSuppressed = true;
+            
             this.WindowState = FormWindowState.Maximized;
-            Dealer = new Guid(dealer);
+            
 
             if (File.Exists(filepath))
             {
@@ -68,14 +75,15 @@ namespace Unipluss.Sign.SignereRegisterAccount
             SetBrowserFeatureControlKey("FEATURE_XMLHTTP", fileName, 1);
 
             #endregion
+
         }
 
-        
 
         private void Register_Load(object sender, EventArgs e)
-        {
+        {            
             webBrowser.Navigate(_url);
         }
+
 
         private void webBrowser_Navigating(object sender, WebBrowserNavigatingEventArgs e)
         {
@@ -108,7 +116,9 @@ namespace Unipluss.Sign.SignereRegisterAccount
                 else if (e.Url.ToString().ToLowerInvariant().Contains("useraborted") || e.Url.ToString().ToLowerInvariant().Contains("userabort") || e.Url.ToString().ToLowerInvariant().Contains("abort"))
                 {
                     Environment.Exit(1);
-                }else if (e.Url.ToString().ToLowerInvariant().Contains("error"))
+                }
+                else if (e.Url.ToString().ToLowerInvariant().Contains("error") &&
+                         !e.Url.ToString().ToLowerInvariant().Contains("errorurl="))
                 {
                     Environment.Exit(33);
                 }
@@ -225,6 +235,236 @@ namespace Unipluss.Sign.SignereRegisterAccount
         }
         #endregion
 
+        private void Register_FormClosed(object sender, FormClosedEventArgs e)
+        {
+           _events.Dispose();
+        }
 
+
+    }
+
+
+
+    // this event sink declares the NewWindow3 event
+    public class WebBrowserEvents : StandardOleMarshalObject, DWebBrowserEvents2, IDisposable
+    {
+        private readonly Guid _dealerId;
+        private readonly string Format;
+        private readonly string _filepath;
+        private AxHost.ConnectionPointCookie _cookie;
+        private readonly IList<string> tempfiles = new List<string>();
+
+        public WebBrowserEvents(WebBrowser wb,Guid dealerId,string format,string filepath)
+        {
+            _dealerId = dealerId;
+            Format = format;
+            _filepath = filepath;
+            _cookie = new AxHost.ConnectionPointCookie(wb.ActiveXInstance, this, typeof(DWebBrowserEvents2));
+        }
+
+      
+
+        #region Un used events
+        void DWebBrowserEvents2.StatusTextChange(string text)
+        {
+            
+        }
+
+        void DWebBrowserEvents2.ProgressChange(int progress, int progressMax)
+        {
+         
+        }
+
+        void DWebBrowserEvents2.CommandStateChange(int command, bool enable)
+        {
+            
+        }
+
+        void DWebBrowserEvents2.DownloadBegin()
+        {
+            
+        }
+
+        void DWebBrowserEvents2.DownloadComplete()
+        {
+    
+        }
+
+        void DWebBrowserEvents2.TitleChange(string text)
+        {
+
+        }
+
+        void DWebBrowserEvents2.PropertyChange(string szProperty)
+        {
+
+        }
+
+        void DWebBrowserEvents2.BeforeNavigate2(object pDisp, ref object URL, ref object flags, ref object targetFrameName, ref object postData, ref object headers, ref bool cancel)
+        {
+
+        }
+
+        void DWebBrowserEvents2.NewWindow2(ref object pDisp, ref bool cancel)
+        {
+
+        }
+
+        void DWebBrowserEvents2.NavigateComplete2(object pDisp, ref object URL)
+        {
+  
+        }
+
+        void DWebBrowserEvents2.DocumentComplete(object pDisp, ref object URL)
+        {
+
+        }
+
+        void DWebBrowserEvents2.OnQuit()
+        {
+
+        }
+
+        void DWebBrowserEvents2.OnVisible(bool visible)
+        {
+
+        }
+
+        void DWebBrowserEvents2.OnToolBar(bool toolBar)
+        {
+
+        }
+
+        void DWebBrowserEvents2.OnMenuBar(bool menuBar)
+        {
+
+        }
+
+        void DWebBrowserEvents2.OnStatusBar(bool statusBar)
+        {
+
+        }
+
+        void DWebBrowserEvents2.OnFullScreen(bool fullScreen)
+        {
+
+        }
+
+        void DWebBrowserEvents2.OnTheaterMode(bool theaterMode)
+        {
+
+        }
+
+        void DWebBrowserEvents2.WindowSetResizable(bool resizable)
+        {
+
+        }
+
+        void DWebBrowserEvents2.WindowSetLeft(int left)
+        {
+
+        }
+
+        void DWebBrowserEvents2.WindowSetTop(int top)
+        {
+
+        }
+
+        void DWebBrowserEvents2.WindowSetWidth(int width)
+        {
+    
+        }
+
+        void DWebBrowserEvents2.WindowSetHeight(int height)
+        {
+            
+        }
+
+        void DWebBrowserEvents2.WindowClosing(bool isChildWindow, ref bool cancel)
+        {
+            
+        }
+
+        void DWebBrowserEvents2.ClientToHostWindow(ref int cx, ref int cy)
+        {
+            
+        }
+
+        void DWebBrowserEvents2.SetSecureLockIcon(int secureLockIcon)
+        {
+            
+        }
+
+        void DWebBrowserEvents2.FileDownload(ref bool cancel)
+        {
+            
+        }
+
+        void DWebBrowserEvents2.NavigateError(object pDisp, ref object URL, ref object frame, ref object statusCode, ref bool cancel)
+        {
+            
+        }
+
+        void DWebBrowserEvents2.PrintTemplateInstantiation(object pDisp)
+        {
+            
+        }
+
+        void DWebBrowserEvents2.PrintTemplateTeardown(object pDisp)
+        {
+            
+        }
+
+        void DWebBrowserEvents2.UpdatePageStatus(object pDisp, ref object nPage, ref object fDone)
+        {
+            
+        }
+
+        void DWebBrowserEvents2.PrivacyImpactedStateChange(bool bImpacted)
+        {
+            
+        }
+        #endregion
+
+        void DWebBrowserEvents2.NewWindow3(ref object pDisp, ref bool cancel, int dwFlags, ref object bstrUrlContext, ref object bstrUrl)
+        {
+            cancel = true;
+
+            using (var webClient = new WebClient())
+            {
+                webClient.Headers.Add(HttpRequestHeader.UserAgent, "Unipluss.Sign.SignereRegisterAccount");
+                webClient.Headers.Add("DealerId", _dealerId.ToString());
+                if (bstrUrl != null)
+                {
+                    var result = webClient.DownloadData(bstrUrl as string);
+
+                    string filepath = string.Format("{0}{1}.pdf", System.IO.Path.GetTempPath(), Guid.NewGuid().ToString("n"));
+                    tempfiles.Add(filepath);
+                    File.WriteAllBytes(filepath, result);
+                    System.Diagnostics.Process.Start(filepath);
+                }
+            }
+        }
+
+       
+        public void Dispose()
+        {
+            if (_cookie != null)
+            {
+                _cookie.Disconnect();
+                _cookie = null;
+            }
+
+            foreach (var tempfile in tempfiles)
+            {
+                try
+                {
+                    if (File.Exists(tempfile))
+                        File.Delete(tempfile);
+                }
+                catch (Exception) { }
+
+            }
+        }
     }
 }

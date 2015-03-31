@@ -1,6 +1,16 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <StartArguments>6f3769a9-e686-4260-a830-7064e33c6b3a http://runes64.unipluss.no/signereportal2/dealerregister/test  d:\tmp\signereno.xml xml</StartArguments>
+    <StartArguments>6f3769a9-e686-4260-a830-7064e33c6b3a http://runes64.unipluss.no/signereportal2/SparebankenVest/994729969%3ffullscreen=True&amp;sign=true&amp;dealerref=1103  d:\tmp\signereno.lic</StartArguments>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PublishUrlHistory>publish\</PublishUrlHistory>
+    <InstallUrlHistory />
+    <SupportUrlHistory />
+    <UpdateUrlHistory />
+    <BootstrapperUrlHistory />
+    <ErrorReportUrlHistory />
+    <FallbackCulture>en-US</FallbackCulture>
+    <VerifyUploadedFiles>false</VerifyUploadedFiles>
   </PropertyGroup>
 </Project>

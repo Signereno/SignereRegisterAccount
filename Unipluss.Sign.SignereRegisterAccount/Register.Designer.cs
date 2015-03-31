@@ -114,6 +114,7 @@
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Signere.no digital signatur trygt og enkelt";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Register_FormClosed);
             this.Load += new System.EventHandler(this.Register_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.panel.ResumeLayout(false);
