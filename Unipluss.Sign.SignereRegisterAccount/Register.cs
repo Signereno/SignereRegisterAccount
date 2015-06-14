@@ -445,8 +445,7 @@ namespace Unipluss.Sign.SignereRegisterAccount
                 }
             }
         }
-
-       
+        
         public void Dispose()
         {
             if (_cookie != null)
