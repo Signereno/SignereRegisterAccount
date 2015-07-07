@@ -23,7 +23,7 @@ Programmet er en windows exe fil som krever .NET 3.5 installert. Den åpner en n
 1. DealerID (Guid) din forhandler ID (må være Signere.no forhandler for å få dette
 2. Register URL denne kan du få fra Signere.no salg, dette er en tilpasset web side med skjema for bestilling av konto. Kan flette inn informasjon til skjema via parametre i URL.
 3. Filsti til lisesnfil eller json/xml fil (se pkt. 4 formater)
-4. Format lic (lisensfil) Json (Tilgangsnøkler og kontoid i json format) Xml (samme som json bare i Xml format)
+4. Format lic (lisensfil) Json (Tilgangsnøkler og kontoid i json format) Xml (samme som json bare i Xml format) (optional standard er lic)
 
 ### Feil koder:
 <ol start="0">
@@ -35,5 +35,6 @@ Programmet er en windows exe fil som krever .NET 3.5 installert. Den åpner en n
   32 Feil med å hente ned lisensinformasjon fra API</br>
   33 Feil som er oppstått i registeringen eller signeringen på web</br>
   34 Filsti i parameter 3 er ugyldig</br></li>
+  <li>Feil antall parametre gyldig antall er 3 eller 4 (format er optional)
  </ol>
 
