@@ -30,6 +30,10 @@ namespace Unipluss.Sign.SignereRegisterAccount
                                   " third: is filepath for licensefile/credentilas and forth (optional) format (json,xml or licensefile)");
                 Environment.ExitCode=2;
             }
+            else if (args.Length > 4)
+            {
+                Environment.ExitCode = 4;
+            }
             else
             {
                 Application.EnableVisualStyles();
