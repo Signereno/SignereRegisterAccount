@@ -25,11 +25,13 @@ Programmet er en windows exe fil som krever .NET 3.5 installert. Den åpner en n
 3. Filsti til lisesnfil eller json/xml fil (se pkt. 4 formater)
 4. Format lic (lisensfil) Json (Tilgangsnøkler og kontoid i json format) Xml (samme som json bare i Xml format)
 
-###Feil koder:
-0.  Alt gikk bra
-1.  Bruker avbrøt prossessen
-2.  Feil med input paramtere
-3. Generell feil
+### Feil koder:
+<ol start="0">
+ <li>Alt gikk bra</li>
+ <li>Bruker avbrøt prossessen</li>
+ <li>Feil med input paramtere</li>
+ <li>Generell feil</li>
+ </ol>
   * 31 Filsti i parameter 3 finnes allerede
   * 32 Feil med å hente ned lisensinformasjon fra API
   * 33 Feil som er oppstått i registeringen eller signeringen på web
