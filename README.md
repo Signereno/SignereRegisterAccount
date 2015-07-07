@@ -30,9 +30,11 @@ Programmet er en windows exe fil som krever .NET 3.5 installert. Den åpner en n
  <li>Alt gikk bra</li>
  <li>Bruker avbrøt prossessen</li>
  <li>Feil med input paramtere</li>
- <li>Generell feil</li>
+ <li>Generell feil
+ <ol start="31" type="1">
+    <li>31 Filsti i parameter 3 finnes allerede</li>
+  <li>32 Feil med å hente ned lisensinformasjon fra API</li>
+  <li>33 Feil som er oppstått i registeringen eller signeringen på web</li>
+  <li>34 Filsti i parameter 3 er ugyldig</li></ol></li>
  </ol>
-  * 31 Filsti i parameter 3 finnes allerede
-  * 32 Feil med å hente ned lisensinformasjon fra API
-  * 33 Feil som er oppstått i registeringen eller signeringen på web
-  * 34 Filsti i parameter 3 er ugyldig
+
