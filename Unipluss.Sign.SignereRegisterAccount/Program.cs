@@ -12,12 +12,12 @@ namespace Unipluss.Sign.SignereRegisterAccount
         [STAThread]
         static void Main(string[] args)
         {
-            string argsText = "";
-            foreach (var s in args)
-            {
-                argsText += s + Environment.NewLine;
-            }
-            MessageBox.Show(argsText);
+            //string argsText = "";
+            //foreach (var s in args)
+            //{
+            //    argsText += s + Environment.NewLine;
+            //}
+            //MessageBox.Show(argsText);
 
             if (args == null || args.Length == 0)
             {
