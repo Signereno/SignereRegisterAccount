@@ -22,10 +22,25 @@ Last ned exe fil her: <a href="https://github.com/Signereno/SignereRegisterAccou
 9. Kunden er nå klar for Norges enkleste Signerings tjeneste :-)
 
 ###Input parameters:
-1. DealerID (Guid) din forhandler ID (må være Signere.no forhandler for å få dette
+1. DealerID (Guid) din forhandler ID (må være Signere.no forhandler for å få dette ta kontakt med salg@signere.no for å bli forhandler)
 2. Register URL denne kan du få fra Signere.no salg, dette er en tilpasset web side med skjema for bestilling av konto. Kan flette inn informasjon til skjema via parametre i URL.
 3. Filsti til lisesnfil eller json/xml fil (se pkt. 4 formater)
 4. Format lic (lisensfil) Json (Tilgangsnøkler og kontoid i json format) Xml (samme som json bare i Xml format) (optional standard er lic)
+
+#### Register URL
+Register URL fra punkt 2 ovenfor kan ta inn følgende paramtere i URL strengen:
+* DealerId: Guid forhandler ID
+* mvanumber: Org nummer for organisasjonen som skal knyttes til kontoen
+* dealerRef: Organisasjonens kundenummer eller lignende hos forhandler, brukes ved fakturering fra Signere.no til forhandler
+* contactFirstName: Kontaktperson for organisasjonen fornavn
+* contactLastName: Kontaktperson for organisasjonen etternavn
+* contactEmail: Kontaktperson for organisasjonen e-postadresse
+* contactPhone: Kontaktperson for organisasjonen telefonnummer
+* contactMobile: Kontaktperson for organisasjonen mobilnummer
+ 
+Ved å fylle ut disse fra forhandler sitt system, slipper bruker å fylle ut og registeringsprosessen blir enklere for sluttbrukeren.
+
+
 
 ### Feil koder:
 <ol start="0">
