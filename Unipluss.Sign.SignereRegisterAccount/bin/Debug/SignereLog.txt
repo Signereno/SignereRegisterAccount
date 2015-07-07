@@ -1,3 +1,7 @@
-Message: The remote server returned an error: (500) Internal Server Error. Stack:    at System.Net.WebClient.UploadDataInternal(Uri address, String method, Byte[] data, WebRequest& request)
-   at System.Net.WebClient.UploadData(Uri address, String method, Byte[] data)
-   at Unipluss.Sign.SignereRegisterAccount.Register.DownloadCredentials(Byte[] data, String format) in d:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\Register.cs:line 161 Source: System Timestamp: 31.03.2015 09:57:38
+Message: Invalid URI: The hostname could not be parsed. Stack:    at System.Uri.CreateHostStringHelper(String str, UInt16 idx, UInt16 end, Flags& flags, String& scopeId)
+   at System.Uri.CreateHostString()
+   at System.Uri.GetComponentsHelper(UriComponents uriComponents, UriFormat uriFormat)
+   at System.Uri.ToString()
+   at System.Windows.Forms.WebBrowser.EnsureUrlConnectPermission(Uri url)
+   at System.Windows.Forms.WebBrowserNavigatingEventArgs.get_Url()
+   at Unipluss.Sign.SignereRegisterAccount.Register.webBrowser_Navigating(Object sender, WebBrowserNavigatingEventArgs e) in d:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\Register.cs:line 92 Source: System Timestamp: 06.07.2015 19:30:06

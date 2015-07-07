@@ -15,4 +15,3 @@ D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign
 D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Debug\Unipluss.Sign.SignereRegisterAccount.csproj.GenerateResource.Cache
 D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Debug\SignereRegisterAccount.exe
 D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Debug\SignereRegisterAccount.pdb
-D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Debug\Unipluss.Sign.SignereRegisterAccount.csprojResolveAssemblyReference.cache

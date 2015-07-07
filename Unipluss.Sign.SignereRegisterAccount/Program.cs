@@ -12,11 +12,23 @@ namespace Unipluss.Sign.SignereRegisterAccount
         [STAThread]
         static void Main(string[] args)
         {
+            string argsText = "";
+            foreach (var s in args)
+            {
+                argsText += s + Environment.NewLine;
+            }
+            MessageBox.Show(argsText);
+
             if (args == null || args.Length == 0)
             {
-                Console.WriteLine("Missing arguments first argument is the dealerid (GUID) second: register url," +
+
+                MessageBox.Show("Missing arguments first argument is the dealerid (GUID) second: register url," +
+                                " third: is filepath for licensefile/credentilas and forth (optional) format (json,xml or licensefile)",
+                    "En feil oppstod", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                System.Diagnostics.Debug.WriteLine("Missing arguments first argument is the dealerid (GUID) second: register url," +
                                   " third: is filepath for licensefile/credentilas and forth (optional) format (json,xml or licensefile)");
-                Environment.Exit(2);
+                Environment.ExitCode=2;
             }
             else
             {

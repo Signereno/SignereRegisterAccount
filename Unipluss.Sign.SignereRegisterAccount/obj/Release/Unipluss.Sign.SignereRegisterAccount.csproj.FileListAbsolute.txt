@@ -7,4 +7,3 @@ D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign
 D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Release\SignereRegisterAccount.exe
 D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Release\SignereRegisterAccount.pdb
 D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\bin\Release\SignereRegisterAccount.exe.config
-D:\git\Unipluss.Sign.SignereRegisterAccount\SignereRegisterAccount\Unipluss.Sign.SignereRegisterAccount\obj\Release\Unipluss.Sign.SignereRegisterAccount.csprojResolveAssemblyReference.cache

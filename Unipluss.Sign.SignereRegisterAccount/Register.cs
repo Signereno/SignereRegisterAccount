@@ -31,11 +31,17 @@ namespace Unipluss.Sign.SignereRegisterAccount
             webBrowser.ScriptErrorsSuppressed = true;
             
             this.WindowState = FormWindowState.Maximized;
+
             
+            if (string.IsNullOrEmpty(filepath) ||!Directory.Exists(Path.GetDirectoryName(filepath)))
+            {
+                System.Diagnostics.Debug.WriteLine(string.Format("Filepath: {0} is not valid", filepath));
+                Environment.Exit(34);
+            }
 
             if (File.Exists(filepath))
             {
-                Console.WriteLine("File: {0} exists already",filepath);
+                System.Diagnostics.Debug.WriteLine(string.Format("File: {0} exists already", filepath));
                 Environment.Exit(31);
             }
 
@@ -81,7 +87,7 @@ namespace Unipluss.Sign.SignereRegisterAccount
 
         private void Register_Load(object sender, EventArgs e)
         {            
-            webBrowser.Navigate(_url);
+            webBrowser.Navigate(_url,null,null,"X-Client:SignereRegisterAccount");
         }
 
 
@@ -126,7 +132,7 @@ namespace Unipluss.Sign.SignereRegisterAccount
             catch (Exception ex)
             {
                 string msg= string.Format("Message: {0} Stack: {1} Source: {2} Timestamp: {3}", ex.Message, ex.StackTrace, ex.Source, DateTime.Now);
-                Console.WriteLine(msg);
+                System.Diagnostics.Debug.WriteLine(msg);
                 if (File.Exists("SignereLog.txt"))
                     File.Delete("SignereLog.txt");
                 File.WriteAllText("SignereLog.txt",msg);
@@ -152,7 +158,7 @@ namespace Unipluss.Sign.SignereRegisterAccount
                 try
                 {
                     var webResponse = ((HttpWebResponse)wex.Response);
-                    if (webResponse.StatusCode == HttpStatusCode.InternalServerError)
+                    if (webResponse.StatusCode == HttpStatusCode.InternalServerError || webResponse.StatusCode==HttpStatusCode.NotFound)
                     {
                         using (var webClient = new WebClient())
                         {
@@ -166,7 +172,7 @@ namespace Unipluss.Sign.SignereRegisterAccount
                 catch (Exception ex2)
                 {
                     string msg = string.Format("Message: {0} Stack: {1} Source: {2} Timestamp: {3}", ex2.Message, ex2.StackTrace, ex2.Source, DateTime.Now);
-                    Console.WriteLine(msg);
+                    System.Diagnostics.Debug.WriteLine(msg);
                     if (File.Exists("SignereLog.txt"))
                         File.Delete("SignereLog.txt");
                     File.WriteAllText("SignereLog.txt", msg);
@@ -182,8 +188,16 @@ namespace Unipluss.Sign.SignereRegisterAccount
 
         private void helpButton_Click(object sender, EventArgs e)
         {
-            HelpBox box = new HelpBox();
-            box.Show(this);
+            StringBuilder sb=new StringBuilder();
+
+            sb.AppendLine(
+                "Dette programmet er laget for å hjelpe deg å registere en konto på Signere.no Norgest enkleste vei til elektronisk signering.");
+            sb.AppendLine("Dersom du opplever problemer ta kontakt med program leverandøren din");
+
+            MessageBox.Show(this, sb.ToString(), "Om programmet", MessageBoxButtons.OK, MessageBoxIcon.Information,
+                MessageBoxDefaultButton.Button1);
+            //HelpBox box = new HelpBox();
+            //box.Show(this);
         }
 
         #region More IE fix
@@ -238,6 +252,11 @@ namespace Unipluss.Sign.SignereRegisterAccount
         private void Register_FormClosed(object sender, FormClosedEventArgs e)
         {
            _events.Dispose();
+        }
+
+        private void Register_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Environment.ExitCode=1;
         }
 
 

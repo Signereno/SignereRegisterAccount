@@ -98,9 +98,9 @@
             this.helpButton.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.helpButton.Location = new System.Drawing.Point(22, 4);
             this.helpButton.Name = "helpButton";
-            this.helpButton.Size = new System.Drawing.Size(107, 31);
+            this.helpButton.Size = new System.Drawing.Size(172, 31);
             this.helpButton.TabIndex = 0;
-            this.helpButton.Text = "Hjelp";
+            this.helpButton.Text = "Om programmet";
             this.helpButton.UseVisualStyleBackColor = true;
             this.helpButton.Click += new System.EventHandler(this.helpButton_Click);
             // 
@@ -114,6 +114,7 @@
             this.Name = "Register";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Signere.no digital signatur trygt og enkelt";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Register_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Register_FormClosed);
             this.Load += new System.EventHandler(this.Register_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
