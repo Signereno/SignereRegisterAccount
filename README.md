@@ -8,6 +8,8 @@ Programmet er en windows exe fil som krever .NET 3.5 installert. Den åpner en n
 
 #####Dette gjør det veldig enkelt å integrere Signere.no sine tjenester i egen programvare. Signere.no enkelt å komme i gang og enkelt i bruk.
 
+Last ned exe fil her: <a href="https://github.com/Signereno/SignereRegisterAccount/blob/master/dist/SignereRegisterAccount.exe" title="Last ned exe fil">Last ned</a>
+
 ###Prosessen
 1. Start exe fil med parametere fra eget program
 2. Programmet laster skjema tilpasset hver forhandler (logo, stilark, informasjon o.l.)
